@@ -11,4 +11,10 @@ public class BankAccProfile extends User
     {
         return account;
     }
+
+    @Override
+    public void setType()
+    {
+     Type="bank account";
+    }
 }

@@ -2,17 +2,31 @@ package SignUp;
 
 import java.sql.SQLOutput;
 
-public class User
+public abstract class User
 {
     private double Balance;
     private String Username;
     private String Password;
     private String MobileNumber;
+    public  String Type;
     public User(){Balance=0;}
-    public void setBalance(Double b){Balance=b;}
+    public void setBalance(Double b,char c)
+    {
+        if(c=='-')
+        {
+            Balance-=b;
+        } else if (c=='+')
+        {
+            Balance+=b;
+        }
+    }
     public void setUsername(String user){Username=user;}
     public void setPassword(String password){Password=password;}
     public void setMobileNumber(String number){MobileNumber=number;}
+    public abstract void setType();
+
+    public String getType() {return Type;}
+
     public double getBalance(){return Balance;}
     public String getUsername(){return Username;}
     public String getPassword(){return Password;}
